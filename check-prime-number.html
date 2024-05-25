@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number Check</title>
+  </head>
+  <body>
+    <script>
+      {
+        // OPTION 1
+        const checkPrime = (num) => {
+          let isPrime = num <= 1 ? false : true;
+          for (let i = 2; i < num; i++) {
+            num % i === 0 ? (isPrime *= false) : (isPrime *= true);
+          }
+          return isPrime;
+        };
+        console.log(checkPrime(3) ? "Prime" : "Not Prime");
+      }
+
+      {
+        // OPTION 2
+        const checkPrime = (num) => {
+          if (num <= 1) return false;
+
+          for (let i = 2; i < Math.sqrt(num); i++) {
+            if (num % i === 0) {
+              return false;
+            }
+          }
+          return true;
+        };
+        console.log(checkPrime(3) ? "Prime" : "Not Prime");
+      }
+    </script>
+  </body>
+</html>
